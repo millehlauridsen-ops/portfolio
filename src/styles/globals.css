@@ -1,0 +1,22 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #222;
+  background: #1d1b1a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}

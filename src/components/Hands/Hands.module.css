@@ -1,0 +1,43 @@
+.handImage {
+  position: absolute;
+  display: block;
+
+  height: auto;
+
+  user-select: none;
+  pointer-events: none;
+
+  z-index: 30;
+}
+
+.left {
+  width: 16%;
+  max-width: 220px;
+
+  left: 25%;
+  bottom: -20%;
+
+  transform: rotate(-8deg);
+}
+
+.right {
+  width: 25%;
+  max-width: 400px;
+
+  left: 80%;
+  top: 85%;
+
+  right: auto;
+  bottom: auto;
+
+  transform: translate(-50%, -50%) rotate(8deg);
+
+  will-change: left, top;
+}
+
+@media (max-width: 700px) {
+  .left,
+  .right {
+    width: 22%;
+  }
+}

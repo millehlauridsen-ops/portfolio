@@ -1,0 +1,30 @@
+.page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100dvh;
+
+  padding: 7rem 2rem 4rem;
+
+  background: #f4f0e9;
+  color: #222;
+
+  overflow-y: auto;
+}
+
+.header {
+  width: min(1200px, 100%);
+  margin: 0 auto 3rem;
+}
+
+.header h1 {
+  margin: 0;
+
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+}
+
+.content {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}

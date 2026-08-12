@@ -1,0 +1,24 @@
+.backButton {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+
+  color: #222;
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  z-index: 10;
+
+  transition: transform 150ms ease;
+}
+
+.backButton:hover {
+  transform: translateX(-4px);
+}
+
+.backButton:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
