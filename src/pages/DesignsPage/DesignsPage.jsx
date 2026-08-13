@@ -1,5 +1,7 @@
 import PageLayout from "../../components/PageLayout/PageLayout";
 import styles from "./DesignsPage.module.css";
+import LottieModule from "lottie-react";
+import designHeroAnimation from "../../assets/animations/prop-carrusel.json";
 
 const projects = [
   {
@@ -29,6 +31,7 @@ const projects = [
 ];
 
 export default function DesignsPage() {
+  const Lottie = LottieModule.default;
   return (
     <PageLayout title="Designs">
       <div className={styles.designsPage} id="start">
@@ -56,15 +59,13 @@ export default function DesignsPage() {
           </div>
 
           <div className={styles.heroVisual}>
-            <div className={`${styles.graphic} ${styles.graphicOne}`}>
-              DESIGN
-            </div>
-
-            <div className={`${styles.graphic} ${styles.graphicTwo}`}>
-              CREATE
-            </div>
-
-            <div className={`${styles.graphic} ${styles.graphicThree}`}>✦</div>
+            <Lottie
+              animationData={designHeroAnimation}
+              loop={true}
+              autoplay={true}
+              className={styles.heroAnimation}
+              style={{}}
+            />
           </div>
         </section>
 
