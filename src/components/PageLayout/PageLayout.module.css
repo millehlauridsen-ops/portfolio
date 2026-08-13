@@ -14,7 +14,7 @@
 
 .header {
   width: min(1200px, 100%);
-  margin: 0 auto 3rem;
+  margin: 0 auto 1rem;
 }
 
 .header h1 {
@@ -27,4 +27,31 @@
 .content {
   width: min(1200px, 100%);
   margin: 0 auto;
+}
+
+.navigation {
+  position: absolute;
+  top: 2rem;
+  left: 4rem;
+  right: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 10;
+}
+
+.deskButton {
+  color: #222;
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition: transform 150ms ease;
+}
+
+.deskButton:hover {
+  transform: translateX(4px);
 }

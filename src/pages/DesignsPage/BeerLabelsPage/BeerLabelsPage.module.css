@@ -1,0 +1,225 @@
+.beerLabelsPage {
+  width: 100%;
+}
+
+/* -------------------------
+   SECTION 1
+-------------------------- */
+
+.introSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+
+  min-height: 500px;
+
+  padding: 2rem 0 3rem;
+}
+
+.eyebrow {
+  margin: 0 0 1.5rem;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.introLeft h2 {
+  margin: 0;
+
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+
+  font-weight: 500;
+}
+
+.introRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  max-width: 500px;
+}
+
+.introRight > p {
+  color: #68635d;
+
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* PROJECT INFORMATION */
+
+.projectInfo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+
+  border-top: 1px solid #c9c4bd;
+}
+
+.projectInfo span {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  color: #89847e;
+}
+
+.projectInfo p {
+  margin: 0.5rem 0 0;
+
+  font-size: 0.85rem;
+}
+
+/* -------------------------
+   SECTION 2
+   CAROUSEL
+-------------------------- */
+
+.carouselSection {
+  position: relative;
+
+  /* Break out of PageLayout's 1200px container */
+  width: 100vw;
+
+  margin-left: calc(50% - 50vw);
+
+  overflow: hidden;
+
+  background: #222;
+}
+
+.carouselTrack {
+  display: flex;
+
+  width: max-content;
+
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  height: 70vh;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.smallSlide {
+  width: 30vw;
+  flex-basis: 30vw;
+}
+
+.largeSlide {
+  width: 70vw;
+  flex-basis: 70vw;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CAROUSEL BUTTONS */
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+
+  width: 55px;
+  height: 55px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f4f0e9;
+  color: #222;
+
+  font-size: 1.3rem;
+
+  cursor: pointer;
+
+  transform: translateY(-50%);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.carouselButton:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.previousButton {
+  left: 2rem;
+}
+
+.nextButton {
+  right: 2rem;
+}
+
+/* -------------------------
+   SECTION 3
+-------------------------- */
+
+.sectionThree {
+  min-height: 500px;
+  padding: 2rem;
+}
+
+.sectionThreeContent {
+  max-width: 800px;
+  margin: 0 auto;
+  p {
+    color: #68635d;
+
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+/* -------------------------
+   MOBILE
+-------------------------- */
+
+@media (max-width: 700px) {
+  .introSection {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+
+    padding: 2rem 0 5rem;
+  }
+
+  .introRight {
+    max-width: none;
+  }
+
+  .projectInfo {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .slide {
+    height: 50vh;
+  }
+
+  .carouselButton {
+    width: 45px;
+    height: 45px;
+  }
+
+  .previousButton {
+    left: 1rem;
+  }
+
+  .nextButton {
+    right: 1rem;
+  }
+}

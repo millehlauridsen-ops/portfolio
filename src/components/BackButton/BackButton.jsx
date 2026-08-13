@@ -1,10 +1,15 @@
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
 import styles from "./BackButton.module.css";
 
-export default function BackButton({ to = "/" }) {
+export default function BackButton() {
+  const navigate = useNavigate();
+
   return (
-    <Link to={to} className={styles.backButton}>
+    <button
+      className={styles.backButton}
+      onClick={() => navigate(-1)}
+    >
       ← Back
-    </Link>
+    </button>
   );
 }

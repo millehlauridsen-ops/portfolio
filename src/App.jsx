@@ -7,6 +7,7 @@ import MePage from "./pages/MePage/MePage";
 import CvPage from "./pages/CvPage/CvPage";
 import AppsPage from "./pages/AppsPage/AppsPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import BeerLabelsPage from "./pages/DesignsPage/BeerLabelsPage/BeerLabelsPage";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Route path="/" element={<HomePage />} />
 
       <Route path="/designs" element={<DesignsPage />} />
+      <Route path="/designs/beer-labels" element={<BeerLabelsPage />} />
       <Route path="/websites" element={<WebsitesPage />} />
       <Route path="/me" element={<MePage />} />
       <Route path="/cv" element={<CvPage />} />
