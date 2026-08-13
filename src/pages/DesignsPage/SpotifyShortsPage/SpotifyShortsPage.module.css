@@ -1,0 +1,199 @@
+.spotifyPage {
+  width: 100%;
+}
+
+/* -------------------------
+   SECTION 1
+-------------------------- */
+
+.introSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+
+  min-height: 500px;
+
+  padding: 2rem 0 3rem;
+}
+
+.eyebrow {
+  margin: 0 0 1.5rem;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.introLeft h2 {
+  margin: 0;
+
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+
+  font-weight: 500;
+}
+
+.introRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  max-width: 500px;
+}
+
+.introRight > p {
+  color: #68635d;
+
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.projectInfo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+
+  border-top: 1px solid #c9c4bd;
+}
+
+.projectInfo span {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  color: #89847e;
+}
+
+.projectInfo p {
+  margin: 0.5rem 0 0;
+
+  font-size: 0.85rem;
+}
+
+/* -------------------------
+   DARK VIDEO SECTIONS
+-------------------------- */
+
+.videoSection {
+  width: 100vw;
+
+  margin-left: calc(50% - 50vw);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  min-height: 80vh;
+
+  padding: 6rem max(2rem, calc((100vw - 1200px) / 2));
+
+  background: #222;
+  color: #f4f0e9;
+}
+
+.videoSection + .videoSection {
+  border-top: 1px solid #3d3d3d;
+}
+
+.processText {
+  max-width: 500px;
+
+  padding-right: 5rem;
+  a {
+    color: inherit;
+  }
+}
+
+.darkEyebrow {
+  margin: 0 0 2rem;
+
+  color: #96918b;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.processText h2 {
+  margin: 0 0 2rem;
+
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+
+  font-weight: 500;
+}
+
+.processText > p:not(.darkEyebrow) {
+  color: #b9b5ae;
+
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* VIDEO */
+
+.videoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 500px;
+}
+
+.videoContainer video {
+  display: block;
+
+  width: auto;
+  max-width: 100%;
+  max-height: 70vh;
+
+  background: #111;
+}
+
+/* -------------------------
+   MOBILE
+-------------------------- */
+
+@media (max-width: 700px) {
+  .introSection {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+
+    padding: 2rem 0 5rem;
+  }
+
+  .introRight {
+    max-width: none;
+  }
+
+  .projectInfo {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .videoSection {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+
+    padding: 5rem 1.5rem;
+  }
+
+  .processText {
+    padding-right: 0;
+  }
+
+  .videoContainer {
+    min-height: auto;
+  }
+
+  .videoContainer video {
+    max-height: 70vh;
+  }
+}

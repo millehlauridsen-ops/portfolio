@@ -8,6 +8,8 @@ import CvPage from "./pages/CvPage/CvPage";
 import AppsPage from "./pages/AppsPage/AppsPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import BeerLabelsPage from "./pages/DesignsPage/BeerLabelsPage/BeerLabelsPage";
+import MoviePosterPage from "./pages/DesignsPage/MoviePosterPage/MoviePosterPage";
+import SpotifyShortsPage from "./pages/DesignsPage/SpotifyShortsPage/SpotifyShortsPage";
 
 export default function App() {
   return (
@@ -16,6 +18,8 @@ export default function App() {
 
       <Route path="/designs" element={<DesignsPage />} />
       <Route path="/designs/beer-labels" element={<BeerLabelsPage />} />
+      <Route path="/designs/movie-poster" element={<MoviePosterPage />} />
+      <Route path="/designs/spotify-shorts" element={<SpotifyShortsPage />} />
       <Route path="/websites" element={<WebsitesPage />} />
       <Route path="/me" element={<MePage />} />
       <Route path="/cv" element={<CvPage />} />

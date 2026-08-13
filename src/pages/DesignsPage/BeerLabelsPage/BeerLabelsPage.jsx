@@ -84,7 +84,7 @@ export default function BeerLabelsPage() {
 
               <div>
                 <span>TOOLS</span>
-                <p>Illustrator · Photoshop</p>
+                <p>Illustrator · Photoshop · Dimensions</p>
               </div>
 
               <div>
