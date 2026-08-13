@@ -438,3 +438,7 @@
     padding: 6rem 1.25rem;
   }
 }
+.projectLink {
+  color: inherit;
+  text-decoration: none;
+}
