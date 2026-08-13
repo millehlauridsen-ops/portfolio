@@ -41,47 +41,20 @@
   position: absolute;
 
   left: 50%;
-  top: 15%;
+  top: 10%;
 
   width: clamp(180px, 20vw, 280px);
-  height: 32%;
 
   transform: translateX(-50%);
 
   z-index: 5;
 
+  display: block;
+
   color: inherit;
   text-decoration: none;
 
   cursor: pointer;
-}
-
-.characterHead {
-  position: absolute;
-
-  left: 50%;
-  top: 0;
-
-  width: clamp(110px, 12vw, 170px);
-  aspect-ratio: 1;
-
-  transform: translateX(-50%);
-
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #c98d6c;
-
-  color: white;
-
-  font-size: clamp(0.7rem, 1vw, 1rem);
-  font-weight: 700;
-  letter-spacing: 0.1em;
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Desk */
@@ -98,6 +71,8 @@
   z-index: 10;
 
   background: transparent;
+
+  pointer-events: none;
 }
 
 .deskSurface {
@@ -118,18 +93,13 @@
   align-items: center;
   justify-content: center;
 
-  user-select: none;
-  position: absolute;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   color: inherit;
   text-decoration: none;
 
   cursor: pointer;
   user-select: none;
+
+  pointer-events: auto;
 }
 
 /* COMPUTER */
@@ -196,7 +166,7 @@
 
 @media (max-width: 700px) {
   .character {
-    top: 13%;
+    top: 10%;
   }
 
   .desk {

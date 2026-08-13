@@ -23,12 +23,9 @@ export default function RightHand() {
       currentX += (targetX - currentX) * 0.15;
       currentY += (targetY - currentY) * 0.15;
 
-      const offsetX = 130;
-      const offsetY = 200;
-
       if (handRef.current) {
-        handRef.current.style.left = `${currentX + offsetX}px`;
-        handRef.current.style.top = `${currentY + offsetY}px`;
+        handRef.current.style.left = `${currentX}px`;
+        handRef.current.style.top = `${currentY}px`;
       }
 
       animationFrameId = requestAnimationFrame(animateHand);
@@ -44,11 +41,8 @@ export default function RightHand() {
   }, []);
 
   return (
-    <img
-      ref={handRef}
-      src={rightHand}
-      alt=""
-      className={`${styles.handImage} ${styles.right}`}
-    />
+    <div ref={handRef} className={styles.rightTracker}>
+      <img src={rightHand} alt="" className={styles.rightHandImage} />
+    </div>
   );
 }

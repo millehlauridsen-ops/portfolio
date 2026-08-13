@@ -8,6 +8,7 @@ import tabletImage from "../../assets/tablet.png";
 import computerImage from "../../assets/computer.png";
 import cvImage from "../../assets/cv.png";
 import phoneImage from "../../assets/phone.png";
+import meImage from "../../assets/me.png";
 import deskBackground from "../../assets/desk-background.png";
 
 export default function DeskScene() {
@@ -22,7 +23,7 @@ export default function DeskScene() {
 
         {/* Person sitting on the other side of the desk */}
         <Link to="/me" className={styles.character}>
-          <div className={styles.characterHead}>ME</div>
+          <img src={meImage} alt="Me" className={styles.objectImage} />
         </Link>
 
         {/* Desk */}

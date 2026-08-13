@@ -20,24 +20,43 @@
   transform: rotate(-8deg);
 }
 
-.right {
-  width: 25%;
-  max-width: 400px;
+.rightTracker {
+  position: absolute;
 
   left: 80%;
   top: 85%;
 
-  right: auto;
-  bottom: auto;
+  width: 0;
+  height: 0;
 
-  transform: translate(-50%, -50%) rotate(8deg);
-
-  will-change: left, top;
+  pointer-events: none;
+  z-index: 30;
 }
 
+.rightHandImage {
+  position: absolute;
+
+  width: clamp(280px, 25vw, 400px);
+  height: auto;
+
+  transform: translate(-6%, -2%) rotate(8deg);
+
+  transform-origin: top left;
+
+  user-select: none;
+  pointer-events: none;
+
+  max-width: none;
+}
 @media (max-width: 700px) {
-  .left,
-  .right {
+  .left {
     width: 22%;
+
+    left: 25%;
+    bottom: -30%;
+  }
+
+  .rightHandImage {
+    width: clamp(170px, 28vw, 240px);
   }
 }
