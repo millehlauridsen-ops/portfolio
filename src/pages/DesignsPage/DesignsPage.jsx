@@ -7,6 +7,8 @@ import appDesign from "../../assets/designprojects/beerlabels.png";
 import posterDesign from "../../assets/designprojects/movieposter.png";
 import visualDesign from "../../assets/designprojects/enesterus.png";
 
+import { Link } from "react-router";
+
 const projects = [
   {
     number: "01",
@@ -15,6 +17,7 @@ const projects = [
     description:
       "Beer-label designs for the danish brand 'Anarkist'. A project for the 'Creative Content' course - learned Adobe Photoshop and Illustrator.",
     image: appDesign,
+    link: "/designs/beer-labels",
   },
   {
     number: "02",
@@ -23,6 +26,7 @@ const projects = [
     image: posterDesign,
     description:
       "A movie poster design showing my own fears and thoughts at the time of the project. Project for the 'Creative Content' course.",
+    link: "/designs/movie-poster",
   },
   {
     number: "03",
@@ -31,6 +35,7 @@ const projects = [
     description:
       "Learning adobe After Effects with two short visualizations to my favorite songs at the time.",
     image: visualDesign,
+    link: "/designs/spotify-shorts",
   },
 ];
 
@@ -88,29 +93,37 @@ export default function DesignsPage() {
 
           <div className={styles.projectGrid}>
             {projects.map((project) => (
-              <article className={styles.projectCard} key={project.number}>
-                <div
-                  className={styles.projectImage}
-                  style={{
-                    backgroundImage: `url(${project.image})`,
-                  }}
-                >
-                  <span className={styles.projectNumber}>{project.number}</span>
-                </div>
-
-                <div className={styles.projectContent}>
-                  <p className={styles.projectCategory}>{project.category}</p>
-
-                  <div className={styles.projectTitle}>
-                    <h3>{project.title}</h3>
-                    <span>↗</span>
+              <Link
+                to={project.link}
+                className={styles.projectLink}
+                key={project.number}
+              >
+                <article className={styles.projectCard}>
+                  <div
+                    className={styles.projectImage}
+                    style={{
+                      backgroundImage: `url(${project.image})`,
+                    }}
+                  >
+                    <span className={styles.projectNumber}>
+                      {project.number}
+                    </span>
                   </div>
 
-                  <p className={styles.projectDescription}>
-                    {project.description}
-                  </p>
-                </div>
-              </article>
+                  <div className={styles.projectContent}>
+                    <p className={styles.projectCategory}>{project.category}</p>
+
+                    <div className={styles.projectTitle}>
+                      <h3>{project.title}</h3>
+                      <span>↗</span>
+                    </div>
+
+                    <p className={styles.projectDescription}>
+                      {project.description}
+                    </p>
+                  </div>
+                </article>
+              </Link>
             ))}
           </div>
         </section>
