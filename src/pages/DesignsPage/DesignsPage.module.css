@@ -160,13 +160,12 @@
 
   height: 430px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   overflow: hidden;
-
-  color: #222;
+  border-radius: 20px;
 
   transition:
     transform 0.3s ease,
@@ -176,18 +175,6 @@
 .projectCard:hover .projectImage {
   transform: translateY(-8px);
   border-radius: 20px;
-}
-
-.orange {
-  background: #ee8066;
-}
-
-.blue {
-  background: #88a8d0;
-}
-
-.green {
-  background: #d8d989;
 }
 
 .projectNumber {

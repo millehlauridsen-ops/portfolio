@@ -3,6 +3,10 @@ import styles from "./DesignsPage.module.css";
 import LottieModule from "lottie-react";
 import designHeroAnimation from "../../assets/animations/prop-carrusel.json";
 
+import appDesign from "../../assets/designprojects/beerlabels.png";
+import posterDesign from "../../assets/designprojects/movieposter.png";
+import visualDesign from "../../assets/designprojects/enesterus.png";
+
 const projects = [
   {
     number: "01",
@@ -10,15 +14,15 @@ const projects = [
     title: "Beer labels for 'Anarkist'",
     description:
       "Beer-label designs for the danish brand 'Anarkist'. A project for the 'Creative Content' course - learned Adobe Photoshop and Illustrator.",
-    color: "orange",
+    image: appDesign,
   },
   {
     number: "02",
     category: "Poster design",
     title: "Movie Poster - own design",
+    image: posterDesign,
     description:
       "A movie poster design showing my own fears and thoughts at the time of the project. Project for the 'Creative Content' course.",
-    color: "blue",
   },
   {
     number: "03",
@@ -26,7 +30,7 @@ const projects = [
     title: "Visuals for songs on Spotify",
     description:
       "Learning adobe After Effects with two short visualizations to my favorite songs at the time.",
-    color: "green",
+    image: visualDesign,
   },
 ];
 
@@ -64,7 +68,6 @@ export default function DesignsPage() {
               loop={true}
               autoplay={true}
               className={styles.heroAnimation}
-              style={{}}
             />
           </div>
         </section>
@@ -87,13 +90,12 @@ export default function DesignsPage() {
             {projects.map((project) => (
               <article className={styles.projectCard} key={project.number}>
                 <div
-                  className={`${styles.projectImage} ${styles[project.color]}`}
+                  className={styles.projectImage}
+                  style={{
+                    backgroundImage: `url(${project.image})`,
+                  }}
                 >
                   <span className={styles.projectNumber}>{project.number}</span>
-
-                  <span className={styles.projectWord}>
-                    {project.title.split(" ")[0]}
-                  </span>
                 </div>
 
                 <div className={styles.projectContent}>
