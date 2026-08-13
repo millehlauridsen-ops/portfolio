@@ -4,7 +4,7 @@ import styles from "./BackButton.module.css";
 export default function BackButton({ to = "/" }) {
   return (
     <Link to={to} className={styles.backButton}>
-      ← Tilbage
+      ← Back
     </Link>
   );
 }
