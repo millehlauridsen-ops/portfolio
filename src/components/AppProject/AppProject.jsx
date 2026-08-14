@@ -76,6 +76,11 @@ export default function AppProject({
 
       <div className={styles.details} id="project-details">
         <article className={styles.detailSection}>
+          <h3>...PubHub?</h3>
+          <p>{designDescription}</p>
+        </article>
+
+        <article className={styles.detailSection}>
           <h3>Concept</h3>
           <p>{conceptDescription}</p>
         </article>
@@ -83,11 +88,6 @@ export default function AppProject({
         <article className={styles.detailSection}>
           <h3>Process</h3>
           <p>{processDescription}</p>
-        </article>
-
-        <article className={styles.detailSection}>
-          <h3>...PubHub?</h3>
-          <p>{designDescription}</p>
         </article>
       </div>
     </section>

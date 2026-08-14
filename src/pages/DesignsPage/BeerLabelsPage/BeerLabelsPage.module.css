@@ -9,6 +9,7 @@
 .introSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   gap: 6rem;
 
   min-height: 500px;
@@ -49,11 +50,14 @@
   line-height: 1.7;
 }
 
-/* PROJECT INFORMATION */
+/* -------------------------
+   PROJECT INFORMATION
+-------------------------- */
 
 .projectInfo {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
   gap: 2rem;
 
   margin-top: 2rem;
@@ -76,12 +80,11 @@
   font-size: 0.85rem;
 }
 
-/* -------------------------
-   SECTION 2
-   CAROUSEL
--------------------------- */
+/* =========================================================
+   DESKTOP CAROUSEL
+   ========================================================= */
 
-.carouselSection {
+.desktopCarouselSection {
   position: relative;
 
   width: 100vw;
@@ -93,7 +96,7 @@
   background: #222;
 }
 
-.carouselTrack {
+.desktopCarouselTrack {
   display: flex;
 
   width: max-content;
@@ -101,25 +104,24 @@
   transition: transform 0.6s ease;
 }
 
-.slide {
+.desktopSlide {
   height: 70vh;
 
   overflow: hidden;
-
   flex-shrink: 0;
 }
 
-.smallSlide {
+.desktopSmallSlide {
   width: 30vw;
   flex-basis: 30vw;
 }
 
-.largeSlide {
+.desktopLargeSlide {
   width: 70vw;
   flex-basis: 70vw;
 }
 
-.slide img {
+.desktopSlide img {
   display: block;
 
   width: 100%;
@@ -129,7 +131,18 @@
   object-position: center;
 }
 
-/* CAROUSEL BUTTONS */
+/* =========================================================
+   MOBILE CAROUSELS
+   Hidden on desktop
+   ========================================================= */
+
+.mobileCarousels {
+  display: none;
+}
+
+/* =========================================================
+   CAROUSEL BUTTONS
+   ========================================================= */
 
 .carouselButton {
   position: absolute;
@@ -150,6 +163,8 @@
   cursor: pointer;
 
   transform: translateY(-50%);
+
+  z-index: 3;
 
   transition:
     transform 0.2s ease,
@@ -193,9 +208,9 @@
   line-height: 1.7;
 }
 
-/* -------------------------
+/* =========================================================
    MOBILE
--------------------------- */
+   ========================================================= */
 
 @media (max-width: 700px) {
   .introSection {
@@ -216,23 +231,88 @@
     gap: 1.5rem;
   }
 
-  /* One image at a time */
+  /* Hide the desktop 30/70 carousel */
 
-  .slide,
-  .smallSlide,
-  .largeSlide {
-    width: 100vw;
-    flex-basis: 100vw;
-
-    height: 62vh;
+  .desktopCarouselSection {
+    display: none;
   }
 
-  .slide img {
-    width: 100%;
-    height: 100%;
+  /* Show the two mobile carousels */
 
-    object-fit: cover;
-    object-position: center;
+  .mobileCarousels {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5rem;
+
+    width: 100vw;
+
+    margin-left: calc(50% - 50vw);
+    padding: 0 0 4rem;
+
+    background: #222;
+    color: #f4f0e9;
+  }
+
+  .mobileCarouselBlock {
+    width: 100%;
+  }
+
+  .mobileCarouselHeading {
+    padding: 3rem 1.25rem 1.5rem;
+  }
+
+  .mobileCarouselHeading .eyebrow {
+    margin-bottom: 0.8rem;
+
+    color: #aaa49e;
+  }
+
+  .mobileCarouselHeading h2 {
+    margin: 0;
+
+    font-size: clamp(1.8rem, 8vw, 2.6rem);
+    line-height: 1.05;
+    font-weight: 500;
+  }
+
+  .mobileCarouselSection {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+  .mobileCarouselTrack {
+    display: flex;
+
+    width: 100%;
+
+    transition: transform 0.5s ease;
+  }
+
+  .mobileSlide {
+    width: 100%;
+    min-width: 100%;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+  }
+
+  .mobileSlide img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    /*
+      Vigtigt:
+      Vi bruger ikke cover på mobil.
+      Hele billedet bliver vist.
+    */
+    object-fit: contain;
   }
 
   .carouselButton {
