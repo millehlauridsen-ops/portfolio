@@ -25,7 +25,9 @@
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
+
   gap: 5rem;
+
   padding: 2rem 0;
 }
 
@@ -81,6 +83,7 @@
 .heroButton:hover,
 .ctaButton:hover {
   transform: translateY(-4px);
+
   background: #3c3936;
 }
 
@@ -90,11 +93,14 @@
 
 .heroVisual {
   width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border: 2px solid #222;
   border-radius: 70px;
+
   background-color: #222;
 }
 
@@ -122,6 +128,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+
   gap: 4rem;
 
   margin-bottom: 4rem;
@@ -148,23 +155,42 @@
 .projectGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
   gap: 1.5rem;
 }
 
+.projectLink {
+  display: block;
+
+  min-width: 0;
+
+  color: inherit;
+  text-decoration: none;
+}
+
 .projectCard {
+  width: 100%;
+
   cursor: pointer;
 }
 
 .projectImage {
   position: relative;
 
-  height: 430px;
+  width: 100%;
+
+  /*
+    I stedet for en fast højde får kortene
+    nu et stabilt format.
+  */
+  aspect-ratio: 4 / 5;
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   overflow: hidden;
+
   border-radius: 20px;
 
   transition:
@@ -174,6 +200,7 @@
 
 .projectCard:hover .projectImage {
   transform: translateY(-8px);
+
   border-radius: 20px;
 }
 
@@ -247,6 +274,7 @@
 .skills {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
+
   gap: 7rem;
 
   padding: 9rem 0;
@@ -268,6 +296,7 @@
 .skill {
   display: grid;
   grid-template-columns: 40px 1fr 1.4fr;
+
   gap: 1.5rem;
 
   padding: 2rem 0;
@@ -351,7 +380,11 @@
   }
 
   .projectImage {
-    height: 500px;
+    /*
+      En smule bredere format på tablet,
+      men billedet fylder stadig hele boksen.
+    */
+    aspect-ratio: 16 / 10;
   }
 
   .skills {
@@ -391,35 +424,41 @@
     height: 390px;
   }
 
-  .graphicOne {
-    width: 210px;
-    height: 280px;
-
-    left: 0;
-
-    font-size: 2rem;
-  }
-
-  .graphicTwo {
-    width: 180px;
-    height: 230px;
-
-    font-size: 1.6rem;
-  }
-
-  .graphicThree {
-    width: 90px;
-    height: 90px;
-
-    font-size: 2.3rem;
-  }
-
   .projects {
     padding: 6rem 1.25rem;
   }
 
+  .projectGrid {
+    gap: 3rem;
+  }
+
   .projectImage {
-    height: 380px;
+    /*
+      På telefon får billedet et format, der passer
+      bedre til den smalle viewport. Ingen fast height,
+      så vi undgår den store tomme kasse.
+    */
+    aspect-ratio: 4 / 3;
+
+    background-size: cover;
+    background-position: center;
+  }
+
+  .projectContent {
+    padding-top: 1.25rem;
+  }
+
+  .projectTitle {
+    align-items: flex-start;
+  }
+
+  .projectTitle h3 {
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+    line-height: 1.15;
+  }
+
+  .projectDescription {
+    max-width: 100%;
   }
 
   .skills {
@@ -437,8 +476,4 @@
   .cta {
     padding: 6rem 1.25rem;
   }
-}
-.projectLink {
-  color: inherit;
-  text-decoration: none;
 }
