@@ -50,10 +50,10 @@
 }
 @media (max-width: 700px) {
   .left {
-    width: 22%;
+    width: 24%;
 
-    left: 25%;
-    bottom: -30%;
+    left: 18%;
+    bottom: -6%;
   }
 
   .rightHandImage {
