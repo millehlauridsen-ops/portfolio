@@ -29,11 +29,13 @@ export default function MePage() {
             </h2>
 
             <p className={styles.introText}>
-              When I started at MDU i'd never coded or designed anything before.
+              When I started at MDU I'd never coded or designed anything before.
               I shot straight into the deep end and learned everything from
               scratch. I love to learn new things, and I thrive in challenges.
-              Here I talk a little about my strengths and weaknesses - how I got
-              to the world of tech and what I bring to the table
+              <br />
+              In this video you can get to know me a little better. I talk a
+              little about my strengths and weaknesses - how I got to the world
+              of tech and what I bring to the table
             </p>
           </div>
 
