@@ -195,7 +195,7 @@
   }
 
   .laptop {
-    width: 36%;
+    width: 38%;
     max-width: none;
 
     left: 27%;
@@ -203,7 +203,7 @@
   }
 
   .cv {
-    width: 22%;
+    width: 24%;
     max-width: none;
 
     left: 61%;
@@ -211,14 +211,14 @@
   }
 
   .tablet {
-    width: 29%;
+    width: 32%;
 
     left: 3%;
     top: 48%;
   }
 
   .phone {
-    width: 14%;
+    width: 16%;
     min-width: 0;
 
     right: 5%;
