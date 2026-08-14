@@ -3,7 +3,7 @@
 }
 
 /* =========================================================
-   TOP BAR
+   DOWNLOAD
    ========================================================= */
 
 .topBar {
@@ -14,10 +14,6 @@
 
   margin: 0 auto 2rem;
 }
-
-/* =========================================================
-   DOWNLOAD BUTTON
-   ========================================================= */
 
 .downloadButton {
   display: inline-flex;
@@ -54,16 +50,18 @@
 }
 
 /* =========================================================
-   CV
+   CV AREA
    ========================================================= */
 
-.cvSection {
-  display: flex;
-  justify-content: center;
+.cvArea {
+  position: relative;
 
   width: 100%;
 
-  padding-bottom: 7rem;
+  display: flex;
+  justify-content: center;
+
+  padding-bottom: 5rem;
 }
 
 .cvPaper {
@@ -78,8 +76,8 @@
   text-decoration: none;
 
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.1),
-    0 5px 15px rgba(0, 0, 0, 0.05);
+    0 20px 60px rgba(0, 0, 0, 0.08),
+    0 5px 15px rgba(0, 0, 0, 0.04);
 
   transition:
     transform 200ms ease,
@@ -87,11 +85,11 @@
 }
 
 .cvPaper:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 
   box-shadow:
-    0 28px 70px rgba(0, 0, 0, 0.12),
-    0 8px 20px rgba(0, 0, 0, 0.06);
+    0 26px 60px rgba(0, 0, 0, 0.11),
+    0 8px 18px rgba(0, 0, 0, 0.05);
 }
 
 .cvImage {
@@ -102,11 +100,179 @@
 }
 
 /* =========================================================
+   ONE MORE THING
+   ========================================================= */
+
+.moreSection {
+  position: sticky;
+
+  top: 25rem;
+
+  /*
+    Fordi elementet stadig ligger absolut ude til højre
+    via transform/offset, påvirker det ikke CV'ets centrering.
+  */
+  align-self: flex-start;
+
+  width: 170px;
+
+  margin-left: 25px;
+  margin-right: -195px;
+
+  padding-top: 8rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  text-align: center;
+}
+
+.moreSection p {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+
+  font-size: clamp(1.15rem, 1.7vw, 1.55rem);
+  line-height: 1.25;
+}
+
+.moreArrow {
+  display: block;
+
+  margin-top: 0.5rem;
+
+  color: #222;
+  text-decoration: none;
+
+  font-size: 3rem;
+  line-height: 1;
+
+  animation: arrowBounce 1.5s ease-in-out infinite;
+}
+
+.moreArrow:hover {
+  animation-play-state: paused;
+}
+
+@keyframes arrowBounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+
+  50% {
+    transform: translateY(10px) rotate(4deg);
+  }
+}
+
+/* =========================================================
+   DIPLOMA
+   ========================================================= */
+
+.diplomaSection {
+  width: min(820px, 100%);
+
+  margin: 0 auto;
+
+  padding: 1rem 0 7rem;
+
+  scroll-margin-top: 3rem;
+}
+
+.diplomaHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+  gap: 8rem;
+
+  margin-bottom: 1.25rem;
+}
+
+.eyebrow {
+  margin: 0;
+
+  color: #89847e;
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.diplomaHeading h2 {
+  margin: 0;
+
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  line-height: 1;
+
+  font-weight: 500;
+}
+
+.diplomaCard {
+  width: min(620px, 100%);
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  background: #06184a;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.12),
+    0 5px 12px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.diplomaImage {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1180px) {
+  .cvPaper {
+    width: min(720px, 78%);
+  }
+
+  .topBar {
+    width: min(720px, 78%);
+  }
+
+  .diplomaSection {
+    width: min(720px, 78%);
+  }
+
+  .moreSection {
+    width: 140px;
+
+    margin-left: 20px;
+    margin-right: -160px;
+
+    padding-top: 6rem;
+  }
+}
+
+/* =========================================================
    MOBILE
    ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .topBar {
+    width: 100%;
+
     margin-bottom: 1.5rem;
   }
 
@@ -116,11 +282,58 @@
     justify-content: space-between;
   }
 
-  .cvSection {
-    padding-bottom: 5rem;
+  .cvArea {
+    display: block;
+
+    padding-bottom: 3rem;
   }
 
   .cvPaper {
     width: 100%;
+  }
+
+  /*
+    På mobil er der ikke plads ved siden af CV'et.
+    Derfor bliver teksten almindelig igen.
+  */
+
+  .moreSection {
+    position: static;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 2.5rem 0 0;
+  }
+
+  .moreSection p {
+    font-size: 1.3rem;
+  }
+
+  .moreArrow {
+    font-size: 2.5rem;
+  }
+
+  .diplomaSection {
+    width: 100%;
+
+    padding-bottom: 5rem;
+  }
+
+  .diplomaHeading {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 0.5rem;
+  }
+
+  .diplomaHeading h2 {
+    font-size: 2rem;
+  }
+
+  .diplomaCard {
+    width: 100%;
+
+    transform: rotate(-0.4deg);
   }
 }
