@@ -1,6 +1,14 @@
 import styles from "./AppProject.module.css";
 
-export default function AppProject({ title, description, figmaUrl, liveUrl }) {
+export default function AppProject({
+  title,
+  projectDescription,
+  conceptDescription,
+  processDescription,
+  designDescription,
+  figmaUrl,
+  liveUrl,
+}) {
   const embedUrl = `https://www.figma.com/embed?embed_host=share&scaling=scale-down-width&url=${encodeURIComponent(
     figmaUrl,
   )}`;
@@ -26,7 +34,10 @@ export default function AppProject({ title, description, figmaUrl, liveUrl }) {
         <div className={styles.info}>
           <h2>{title}</h2>
 
-          <p>{description}</p>
+          <p>{projectDescription}</p>
+          <p>{conceptDescription}</p>
+          <p>{processDescription}</p>
+          <p>{designDescription}</p>
 
           <div className={styles.projectMeta}>
             <div>
