@@ -55,7 +55,7 @@ export default function AppProject({
             </a>
 
             <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-              Open coded app →
+              Open GitHub Repository →
             </a>
           </div>
 

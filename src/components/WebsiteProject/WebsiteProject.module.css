@@ -11,6 +11,10 @@
   padding: clamp(3rem, 6vw, 6rem) 0;
 }
 
+.project:first-child {
+  padding-top: 1rem;
+}
+
 .reverse {
   grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.5fr);
 }

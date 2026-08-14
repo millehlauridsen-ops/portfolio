@@ -5,6 +5,7 @@ export default function WebsiteProject({
   description,
   figmaUrl,
   liveUrl,
+  githubUrl,
   reverse = false,
 }) {
   const embedUrl = `https://www.figma.com/embed?embed_host=share&scaling=scale-down-width&url=${encodeURIComponent(
@@ -35,6 +36,18 @@ export default function WebsiteProject({
             className={styles.liveLink}
           >
             Se live website →
+          </a>
+        )}
+        <br />
+        <br />
+        {githubUrl && (
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.liveLink}
+          >
+            Se GitHub repository →
           </a>
         )}
       </div>

@@ -1,0 +1,194 @@
+.mePage {
+  width: 100%;
+}
+
+/* =========================================================
+   TOP SECTION
+   ========================================================= */
+
+.topSection {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+
+  gap: clamp(2.5rem, 5vw, 5rem);
+
+  padding: 0 0 3rem;
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro {
+  max-width: 520px;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+
+  color: #77716b;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.intro h2 {
+  margin: 0;
+
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+
+  font-weight: 500;
+}
+
+.introText {
+  max-width: 500px;
+
+  margin: 1.5rem 0 0;
+
+  color: #68635d;
+
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
+
+.videoWrapper {
+  width: min(620px, 100%);
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  border: 2px solid #222;
+  border-radius: 18px;
+
+  background: #111;
+
+  box-shadow:
+    8px 10px 0 rgba(0, 0, 0, 0.08),
+    0 18px 45px rgba(0, 0, 0, 0.08);
+}
+
+.interviewVideo {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* =========================================================
+   QUALITIES
+   ========================================================= */
+
+.qualitiesSection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 1rem;
+
+  padding: 2rem 0 6rem;
+
+  border-top: 1px solid #c9c4bd;
+}
+
+.quality {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 90px;
+
+  padding: 1rem;
+
+  border: 1px solid #c9c4bd;
+  border-radius: 100px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+
+  text-align: center;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .topSection {
+    grid-template-columns: 1fr;
+
+    gap: 2.5rem;
+
+    padding-bottom: 3rem;
+  }
+
+  .intro {
+    max-width: 650px;
+  }
+
+  .videoWrapper {
+    width: min(620px, 100%);
+
+    margin: 0 auto;
+  }
+
+  .qualitiesSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .topSection {
+    gap: 1.5rem;
+
+    padding: 0 0 2.5rem;
+  }
+
+  .intro h2 {
+    font-size: clamp(2.8rem, 13vw, 4rem);
+  }
+
+  .introText {
+    margin-top: 1.25rem;
+
+    font-size: 0.95rem;
+  }
+
+  .videoWrapper {
+    width: 100%;
+
+    border-radius: 12px;
+  }
+
+  .qualitiesSection {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 0.7rem;
+
+    padding: 1.5rem 0 5rem;
+  }
+
+  .quality {
+    min-height: 65px;
+
+    padding: 0.8rem;
+
+    font-size: 0.95rem;
+  }
+}
