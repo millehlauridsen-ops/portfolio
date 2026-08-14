@@ -15,8 +15,7 @@ export default function AppProject({
 
   return (
     <section className={styles.project}>
-      <div className={styles.previews}>
-        {/* FIGMA */}
+      <div className={styles.topSection}>
         <div className={styles.previewColumn}>
           <h3>Figma Prototype</h3>
 
@@ -30,14 +29,13 @@ export default function AppProject({
           </div>
         </div>
 
-        {/* INFO */}
         <div className={styles.info}>
           <h2>{title}</h2>
 
-          <p>{projectDescription}</p>
-          <p>{conceptDescription}</p>
-          <p>{processDescription}</p>
-          <p>{designDescription}</p>
+          <div className={styles.introSection}>
+            <h3>About the project</h3>
+            <p>{projectDescription}</p>
+          </div>
 
           <div className={styles.projectMeta}>
             <div>
@@ -47,22 +45,26 @@ export default function AppProject({
 
             <div>
               <span>Development</span>
-              <strong>React / Web app</strong>
+              <strong>React / Web App</strong>
             </div>
           </div>
 
           <div className={styles.links}>
             <a href={figmaUrl} target="_blank" rel="noopener noreferrer">
-              Open Figma designsystem →
+              Open Figma design system →
             </a>
 
             <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-              Open Github Repository →
+              Open coded app →
             </a>
           </div>
+
+          <a href="#project-details" className={styles.readMore}>
+            <span>Read more</span>
+            <span className={styles.arrow}>↓</span>
+          </a>
         </div>
 
-        {/* CODED APP */}
         <div className={styles.previewColumn}>
           <h3>Coded App</h3>
 
@@ -70,6 +72,23 @@ export default function AppProject({
             <iframe src={liveUrl} title={`${title} live app`} loading="lazy" />
           </div>
         </div>
+      </div>
+
+      <div className={styles.details} id="project-details">
+        <article className={styles.detailSection}>
+          <h3>Concept</h3>
+          <p>{conceptDescription}</p>
+        </article>
+
+        <article className={styles.detailSection}>
+          <h3>Process</h3>
+          <p>{processDescription}</p>
+        </article>
+
+        <article className={styles.detailSection}>
+          <h3>...PubHub?</h3>
+          <p>{designDescription}</p>
+        </article>
       </div>
     </section>
   );

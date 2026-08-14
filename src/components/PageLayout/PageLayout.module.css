@@ -2,19 +2,105 @@
   position: relative;
 
   width: 100%;
+  height: 100vh;
   height: 100dvh;
 
   padding: 7rem 2rem 4rem;
 
-  background: #f4f0e9;
   color: #222;
 
+  overflow-x: hidden;
   overflow-y: auto;
+
+  background-color: #f4f0e9;
+
+  background-image:
+    linear-gradient(rgba(244, 240, 233, 0.82), rgba(244, 240, 233, 0.82)),
+    url("../../assets/wood-texture.jpg");
+
+  background-repeat: no-repeat, repeat;
+
+  background-size:
+    100% 100%,
+    700px auto;
+
+  background-position:
+    center,
+    center top;
+
+  background-attachment: local, local;
 }
 
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navigation {
+  position: absolute;
+
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 10;
+}
+
+/* =========================================================
+   BACK TO THE DESK
+   ========================================================= */
+
+.deskButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  color: #222;
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  padding: 0.65rem 1rem;
+
+  border: 2px solid #222;
+  border-radius: 999px;
+
+  background: rgba(244, 240, 233, 0.75);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  transition:
+    transform 150ms ease,
+    background 150ms ease;
+}
+
+.deskButton:hover {
+  transform: translateY(-2px);
+
+  background: #f4f0e9;
+}
+
+.deskButton:focus-visible {
+  outline: 2px solid #222;
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 .header {
+  position: relative;
+  z-index: 1;
+
   width: min(1200px, 100%);
-  margin: 0 auto 1rem;
+
+  margin: 0 auto 3rem;
 }
 
 .header h1 {
@@ -24,34 +110,45 @@
   line-height: 1;
 }
 
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
 .content {
+  position: relative;
+  z-index: 1;
+
   width: min(1200px, 100%);
+
   margin: 0 auto;
 }
 
-.navigation {
-  position: absolute;
-  top: 2rem;
-  left: 4rem;
-  right: 4rem;
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+@media (max-width: 700px) {
+  .page {
+    padding: 6rem 1.25rem 3rem;
 
-  z-index: 10;
-}
+    background-size:
+      100% 100%,
+      500px auto;
+  }
 
-.deskButton {
-  color: #222;
-  text-decoration: none;
+  .navigation {
+    top: 1.5rem;
+    left: 1.25rem;
+    right: 1.25rem;
+  }
 
-  font-size: 1rem;
-  font-weight: 600;
+  .deskButton {
+    font-size: 0.9rem;
 
-  transition: transform 150ms ease;
-}
+    padding: 0.55rem 0.85rem;
+  }
 
-.deskButton:hover {
-  transform: translateX(4px);
+  .header {
+    margin-bottom: 2rem;
+  }
 }
