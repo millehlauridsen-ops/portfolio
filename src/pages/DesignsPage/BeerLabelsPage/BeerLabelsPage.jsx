@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import PageLayout from "../../../components/PageLayout/PageLayout";
 import styles from "./BeerLabelsPage.module.css";
@@ -21,9 +21,35 @@ const carouselImages = [
 
 export default function BeerLabelsPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 700px)");
+
+    const updateScreenSize = () => {
+      setIsMobile(mediaQuery.matches);
+      setCurrentIndex(0);
+    };
+
+    updateScreenSize();
+
+    mediaQuery.addEventListener("change", updateScreenSize);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateScreenSize);
+    };
+  }, []);
 
   function nextImages() {
     setCurrentIndex((prevIndex) => {
+      if (isMobile) {
+        if (prevIndex >= carouselImages.length - 1) {
+          return 0;
+        }
+
+        return prevIndex + 1;
+      }
+
       if (prevIndex >= carouselImages.length - 2) {
         return 0;
       }
@@ -34,6 +60,14 @@ export default function BeerLabelsPage() {
 
   function previousImages() {
     setCurrentIndex((prevIndex) => {
+      if (isMobile) {
+        if (prevIndex === 0) {
+          return carouselImages.length - 1;
+        }
+
+        return prevIndex - 1;
+      }
+
       if (prevIndex === 0) {
         return carouselImages.length - 2;
       }
@@ -42,10 +76,15 @@ export default function BeerLabelsPage() {
     });
   }
 
+  const translateAmount = isMobile
+    ? currentIndex * 100
+    : (currentIndex / 2) * 100;
+
   return (
     <PageLayout title="Beer Labels">
       <div className={styles.beerLabelsPage}>
         {/* SECTION 1 */}
+
         <section className={styles.introSection}>
           <div className={styles.introLeft}>
             <p className={styles.eyebrow}>CREATIVE CONTENT · 2026</p>
@@ -96,11 +135,12 @@ export default function BeerLabelsPage() {
         </section>
 
         {/* SECTION 2 — CAROUSEL */}
+
         <section className={styles.carouselSection}>
           <div
             className={styles.carouselTrack}
             style={{
-              transform: `translateX(-${(currentIndex / 2) * 100}vw)`,
+              transform: `translateX(-${translateAmount}vw)`,
             }}
           >
             {carouselImages.map((image, index) => (
@@ -118,7 +158,7 @@ export default function BeerLabelsPage() {
           <button
             className={`${styles.carouselButton} ${styles.previousButton}`}
             onClick={previousImages}
-            aria-label="Previous images"
+            aria-label="Previous image"
           >
             ←
           </button>
@@ -126,17 +166,20 @@ export default function BeerLabelsPage() {
           <button
             className={`${styles.carouselButton} ${styles.nextButton}`}
             onClick={nextImages}
-            aria-label="Next images"
+            aria-label="Next image"
           >
             →
           </button>
         </section>
 
         {/* SECTION 3 */}
+
         <section className={styles.sectionThree}>
           <div className={styles.sectionThreeContent}>
             <h2>Nothing is ever too hard to learn - is my mantra</h2>
+
             <br />
+
             <p>
               In this process I worked with Photoshop and Illustrator for the
               very first time. It took time and energy to learn the tools and

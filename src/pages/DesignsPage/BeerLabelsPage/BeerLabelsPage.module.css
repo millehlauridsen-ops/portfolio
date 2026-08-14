@@ -84,7 +84,6 @@
 .carouselSection {
   position: relative;
 
-  /* Break out of PageLayout's 1200px container */
   width: 100vw;
 
   margin-left: calc(50% - 50vw);
@@ -104,7 +103,9 @@
 
 .slide {
   height: 70vh;
+
   overflow: hidden;
+
   flex-shrink: 0;
 }
 
@@ -120,15 +121,19 @@
 
 .slide img {
   display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+  object-position: center;
 }
 
 /* CAROUSEL BUTTONS */
 
 .carouselButton {
   position: absolute;
+
   top: 50%;
 
   width: 55px;
@@ -153,6 +158,7 @@
 
 .carouselButton:hover {
   background: white;
+
   transform: translateY(-50%) scale(1.08);
 }
 
@@ -170,18 +176,21 @@
 
 .sectionThree {
   min-height: 500px;
+
   padding: 2rem;
 }
 
 .sectionThreeContent {
   max-width: 800px;
-  margin: 0 auto;
-  p {
-    color: #68635d;
 
-    font-size: 1rem;
-    line-height: 1.7;
-  }
+  margin: 0 auto;
+}
+
+.sectionThreeContent p {
+  color: #68635d;
+
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 /* -------------------------
@@ -203,23 +212,45 @@
 
   .projectInfo {
     grid-template-columns: 1fr;
+
     gap: 1.5rem;
   }
 
-  .slide {
-    height: 50vh;
+  /* One image at a time */
+
+  .slide,
+  .smallSlide,
+  .largeSlide {
+    width: 100vw;
+    flex-basis: 100vw;
+
+    height: 62vh;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
   }
 
   .carouselButton {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
+
+    font-size: 1.1rem;
   }
 
   .previousButton {
-    left: 1rem;
+    left: 0.75rem;
   }
 
   .nextButton {
-    right: 1rem;
+    right: 0.75rem;
+  }
+
+  .sectionThree {
+    padding: 4rem 0;
   }
 }
