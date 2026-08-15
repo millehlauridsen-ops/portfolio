@@ -1,8 +1,6 @@
 import PageLayout from "../../components/PageLayout/PageLayout";
 import styles from "./MePage.module.css";
 
-import myInterview from "../../assets/me/myinterview.MOV";
-
 const qualities = [
   "Problem-solving motivated",
   "Can-do attitude",
@@ -15,6 +13,8 @@ const qualities = [
 ];
 
 export default function MePage() {
+  const interviewVideo = `${import.meta.env.BASE_URL}videos/myinterview.mp4`;
+
   return (
     <PageLayout title="Hi! I'm Mille">
       <div className={styles.mePage}>
@@ -42,9 +42,11 @@ export default function MePage() {
           <div className={styles.videoWrapper}>
             <video
               className={styles.interviewVideo}
-              src={myInterview}
+              src={interviewVideo}
               controls
               playsInline
+              preload="metadata"
+              style={{ filter: "brightness(1.18)" }}
             />
           </div>
         </section>
