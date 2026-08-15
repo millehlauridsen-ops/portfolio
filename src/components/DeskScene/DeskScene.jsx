@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import Hands from "../Hands/Hands";
 import LeftHand from "../Hands/LeftHand";
 import RightHand from "../Hands/RightHand";
+
 import tabletImage from "../../assets/tablet.png";
 import computerImage from "../../assets/computer.png";
 import cvImage from "../../assets/cv.png";
@@ -21,7 +22,53 @@ export default function DeskScene() {
           style={{ backgroundImage: `url(${deskBackground})` }}
         />
 
-        {/* Person sitting on the other side of the desk */}
+        {/* Portfolio intro */}
+        <div className={styles.portfolioIntro}>
+          <p>
+            This is my portfolio - click around to see my projects and
+            investigate
+          </p>
+        </div>
+
+        {/* Hi Mille note */}
+        <div className={styles.helloNote}>
+          <p className={styles.helloText}>Hi! I&apos;m Mille</p>
+
+          <svg
+            className={styles.helloArrow}
+            viewBox="0 0 180 140"
+            aria-hidden="true"
+          >
+            <defs>
+              <marker
+                id="helloArrowHead"
+                markerWidth="10"
+                markerHeight="10"
+                refX="8"
+                refY="5"
+                orient="auto"
+                markerUnits="strokeWidth"
+              >
+                <path
+                  d="M 0 0 L 8 5 L 0 10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </marker>
+            </defs>
+
+            <path
+              d="M15 20 C95 10, 150 55, 145 112"
+              className={styles.arrowLine}
+              markerEnd="url(#helloArrowHead)"
+            />
+          </svg>
+        </div>
+
+        {/* Me */}
         <Link to="/me" className={styles.character}>
           <img src={meImage} alt="Me" className={styles.objectImage} />
         </Link>
@@ -29,8 +76,6 @@ export default function DeskScene() {
         {/* Desk */}
         <div className={styles.desk}>
           <div className={styles.deskSurface}>
-            {/* Back / further away */}
-
             <Link
               to="/websites"
               className={`${styles.object} ${styles.laptop}`}
@@ -45,8 +90,6 @@ export default function DeskScene() {
             <Link to="/cv" className={`${styles.object} ${styles.cv}`}>
               <img src={cvImage} alt="CV" className={styles.objectImage} />
             </Link>
-
-            {/* Front / closer to the viewer */}
 
             <Link to="/designs" className={`${styles.object} ${styles.tablet}`}>
               <img

@@ -19,7 +19,9 @@
   overflow: hidden;
 }
 
-/* Background */
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
 
 .background {
   position: absolute;
@@ -35,7 +37,112 @@
   z-index: 0;
 }
 
-/* Character */
+/* =========================================================
+   PORTFOLIO INTRO
+   ========================================================= */
+
+.portfolioIntro {
+  position: absolute;
+
+  top: 3rem;
+  left: 3rem;
+
+  width: min(360px, 35vw);
+
+  z-index: 20;
+
+  pointer-events: none;
+}
+
+.portfolioIntro p {
+  margin: 0;
+
+  padding: 0.8rem 1rem;
+
+  border: 1.5px solid #222;
+  border-radius: 18px;
+
+  background: rgba(244, 240, 233, 0.82);
+
+  color: #222;
+
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  line-height: 1.45;
+  font-weight: 500;
+
+  box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.08);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* =========================================================
+   HI MILLE NOTE
+   ========================================================= */
+
+.helloNote {
+  position: absolute;
+
+  top: 3.8rem;
+  left: calc(50% + 100px);
+
+  width: 220px;
+
+  z-index: 21;
+
+  pointer-events: none;
+}
+
+.helloText {
+  margin: 0;
+
+  color: #fff;
+
+  font-family:
+    "Segoe Print", "Bradley Hand", "Marker Felt", "Comic Sans MS", cursive;
+
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  -webkit-text-stroke: 0.6px #fff;
+}
+
+/* =========================================================
+   HELLO ARROW
+   ========================================================= */
+
+.helloArrow {
+  display: block;
+
+  width: 170px;
+  height: auto;
+
+  margin-top: 0.2rem;
+  margin-left: -2rem;
+
+  overflow: visible;
+
+  color: #fff;
+  scale: 0.8;
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+.arrowLine {
+  fill: none;
+
+  stroke: currentColor;
+  stroke-width: 4;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* =========================================================
+   CHARACTER
+   ========================================================= */
 
 .character {
   position: absolute;
@@ -57,7 +164,9 @@
   cursor: pointer;
 }
 
-/* Desk */
+/* =========================================================
+   DESK
+   ========================================================= */
 
 .desk {
   position: absolute;
@@ -84,7 +193,9 @@
   background: transparent;
 }
 
-/* Shared object styling */
+/* =========================================================
+   OBJECTS
+   ========================================================= */
 
 .object {
   position: absolute;
@@ -184,6 +295,48 @@
    ========================================================= */
 
 @media (max-width: 700px) {
+  .portfolioIntro {
+    top: 1.25rem;
+    left: 1rem;
+
+    width: min(245px, 66vw);
+  }
+
+  .portfolioIntro p {
+    padding: 0.65rem 0.8rem;
+
+    border-radius: 14px;
+
+    font-size: 0.74rem;
+    line-height: 1.4;
+  }
+
+  .helloNote {
+    top: 10.5rem;
+    left: auto;
+    right: 0.6rem;
+
+    width: 150px;
+  }
+
+  .helloText {
+    font-size: 1.3rem;
+
+    text-align: center;
+
+    -webkit-text-stroke: 0.5px #fff;
+  }
+
+  .helloArrow {
+    width: 115px;
+
+    margin-top: 0.2rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    transform: rotate(90deg);
+  }
+
   .character {
     top: 15%;
 
